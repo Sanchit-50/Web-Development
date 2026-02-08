@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather Widget</title>
+    <style>
+        /* Global Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background: #2c3e50; /* Dark background to make widget pop */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Widget Container */
+        .weather-card {
+            width: 320px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 30px;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Weather Icon (Sun) */
+        .icon-container {
+            position: relative;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sun {
+            width: 60px;
+            height: 60px;
+            background: #f1c40f;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #f1c40f;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        /* Temperature & Info */
+        .temp {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            line-height: 1;
+        }
+
+        .temp span {
+            font-size: 2rem;
+            vertical-align: top;
+            font-weight: 300;
+        }
+
+        .city {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        /* Bottom Details Grid */
+        .details {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .detail-item p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .detail-item span {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Decorative Background Circle */
+        .weather-card::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="weather-card">
+        <div class="icon-container">
+            <div class="sun"></div>
+        </div>
+        
+        <div class="temp">28<span>°C</span></div>
+        <div class="city">San Francisco, CA</div>
+
+        <div class="details">
+            <div class="detail-item">
+                <p>Humidity</p>
+                <span>42%</span>
+            </div>
+            <div class="detail-item">
+                <p>Wind</p>
+                <span>12 km/h</span>
+            </div>
+            <div class="detail-item">
+                <p>Visibility</p>
+                <span>10 km</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
