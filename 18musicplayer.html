@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Music Player</title>
+    <style>
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: #121212;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* Player Container */
+        .player {
+            width: 320px;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 15px 15px 30px #0a0a0a, -5px -5px 15px #2a2a2a;
+            text-align: center;
+        }
+
+        /* Album Art */
+        .album-art {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1db954, #148e3f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            font-size: 80px;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Track Info */
+        .track-info h2 { font-size: 1.5rem; margin-bottom: 5px; color: #fff; }
+        .track-info p { font-size: 0.9rem; color: #b3b3b3; margin-bottom: 25px; }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            background: #333;
+            height: 6px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .progress-fill {
+            width: 65%; /* Current playback position */
+            background: #1db954;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #1db954;
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            color: #b3b3b3;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover { color: #1db954; }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: #1db954;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+            background: #1ed760;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="player">
+        <div class="album-art">🎧</div>
+        
+        <div class="track-info">
+            <h2>Winning Speech</h2>
+            <p>Karan Auja , Seshnolan</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="time-info">
+            <span>2:45</span>
+            <span>3:47</span>
+        </div>
+
+        <div class="controls">
+            <button class="btn">🔁</button>
+            <button class="btn">⏮</button>
+            <button class="btn play-btn">▶</button>
+            <button class="btn">⏭</button>
+            <button class="btn">🔀</button>
+        </div>
+    </div>
+
+</body>
+</html>
