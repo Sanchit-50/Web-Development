@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone Navbar</title>
+    <style>
+        /* Global Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+
+        body { background-color: #eaeded; }
+
+        /* Main Navbar */
+        .navbar {
+            height: 60px;
+            background-color: #131921;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            gap: 10px;
+        }
+
+        /* Logo Area */
+        .nav-logo {
+            border: 1px solid transparent;
+            padding: 5px 8px;
+            cursor: pointer;
+        }
+        .nav-logo:hover { border: 1px solid white; }
+        .logo-text { font-size: 1.5rem; font-weight: bold; color: white; }
+        .logo-text span { color: #febd69; }
+
+        /* Address Box */
+        .nav-address {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 8px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .nav-address:hover { border: 1px solid white; }
+        .address-top { font-size: 12px; color: #ccc; margin-left: 15px; }
+        .address-bottom { font-size: 14px; font-weight: bold; }
+
+        /* Search Bar */
+        .nav-search {
+            display: flex;
+            flex: 1; /* Grows to fill available space */
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+        .search-select {
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+            border: none;
+            border-right: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .search-input {
+            flex: 1;
+            padding: 0 10px;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+        .search-icon {
+            width: 45px;
+            background-color: #febd69;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .search-icon:hover { background-color: #f3a847; }
+
+        /* Right Side Links */
+        .nav-right { display: flex; align-items: center; gap: 5px; }
+        .nav-item {
+            padding: 5px 8px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .nav-item:hover { border: 1px solid white; }
+        .nav-item p { font-size: 12px; }
+        .nav-item span { font-size: 14px; font-weight: bold; }
+
+        /* Sub-Navbar (Second Row) */
+        .sub-nav {
+            height: 39px;
+            background-color: #232f3e;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 15px;
+            font-size: 14px;
+        }
+        .sub-nav-links { display: flex; list-style: none; gap: 15px; align-items: center; }
+        .sub-nav-links li { 
+            padding: 8px; 
+            border: 1px solid transparent; 
+            cursor: pointer; 
+        }
+        .sub-nav-links li:hover { border: 1px solid white; }
+        .menu-icon { font-weight: bold; display: flex; align-items: center; gap: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo-text">amazon<span>.in</span></div>
+            </div>
+
+            <div class="nav-address">
+                <p class="address-top">Deliver to</p>
+                <div class="address-bottom">📍 India</div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input type="text" placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">🔍</div>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-item">
+                    <p>Hello, sign in</p>
+                    <span>Account & Lists</span>
+                </div>
+                <div class="nav-item">
+                    <p>Returns</p>
+                    <span>& Orders</span>
+                </div>
+                <div class="nav-item">
+                    <span>🛒 Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-nav">
+            <ul class="sub-nav-links">
+                <li class="menu-icon">☰ All</li>
+                <li>Fresh</li>
+                <li>Today's Deals</li>
+                <li>Keep Shoping for</li>
+                <li>Customer Service</li>
+                <li>Registry</li>
+                <li>Amazon Pay</li>
+                <li>Gift Cards</li>
+                <li>Buy Again</li>
+                <li>Sell</li>
+                <li>History</li>
+                <li>Gift Ideas</li>
+            </ul>
+        </div>
+    </header>
+
+</body>
+</html>
