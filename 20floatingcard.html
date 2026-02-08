@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Floating Pricing Card</title>
+    <style>
+        /* Setup the 3D Stage */
+        body {
+            background-color: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            perspective: 1000px; /* Essential for 3D depth */
+            margin: 0;
+        }
+
+        /* The Card Container */
+        .card {
+            width: 300px;
+            height: 400px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            transform-style: preserve-3d; /* Allows nested 3D elements */
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        /* Tilt effect on hover */
+        .card:hover {
+            transform: rotateY(15deg) rotateX(10deg);
+        }
+
+        /* Pop-out Text Effects */
+        .title {
+            font-size: 1.2rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: translateZ(30px); /* Moves text toward user */
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #333;
+            transform: translateZ(60px); /* Moves price even further out */
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            color: #666;
+            line-height: 2;
+            transform: translateZ(40px);
+        }
+
+        .btn {
+            background: #6c5ce7;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transform: translateZ(50px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #5b4bc4;
+            transform: translateZ(70px) scale(1.1);
+        }
+
+        /* Background floating circle decoration */
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            top: -20px;
+            right: -20px;
+            transform: translateZ(-20px); /* Pushes circle behind the content */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="circle"></div>
+        <div class="title">Standard</div>
+        <div class="price">$17</div>
+        <ul class="features">
+            <li>✅ 100GB Storage</li>
+            <li>✅ 24/7 Support</li>
+            <li>✅ trusted by over 10,000 users</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+    </div>
+
+</body>
+</html>
