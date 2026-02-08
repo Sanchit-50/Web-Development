@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Measurer Widget</title>
+    <style>
+        :root {
+            /* Change this value (0 to 180) to move the needle */
+            --aqi-rotation: 165deg; 
+            --bg-color: #f0f2f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: var(--bg-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .aqi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Gauge Container */
+        .gauge-container {
+            position: relative;
+            width: 250px;
+            height: 125px; /* Half of width for semi-circle */
+            margin: 0 auto 20px;
+            overflow: hidden; /* Clips the bottom of the circle */
+        }
+
+        .gauge-arc {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            /* AQI Color Scale Gradient */
+            background: conic-gradient(
+                from 270deg,
+                #00e400 0deg 30deg,   /* Good */
+                #ffff00 30deg 60deg,  /* Moderate */
+                #ff7e00 60deg 90deg,  /* Unhealthy for Sensitive */
+                #ff0000 90deg 120deg, /* Unhealthy */
+                #8f3f97 120deg 150deg, /* Very Unhealthy */
+                #7e0023 150deg 180deg  /* Hazardous */
+            );
+            mask: radial-gradient(circle, transparent 65%, black 66%);
+            -webkit-mask: radial-gradient(circle, transparent 65%, black 66%);
+        }
+
+        /* The Needle */
+        .needle {
+            position: absolute;
+            width: 4px;
+            height: 90px;
+            background: #333;
+            bottom: 0;
+            left: calc(50% - 2px);
+            transform-origin: bottom center;
+            transform: rotate(calc(var(--aqi-rotation) - 90deg));
+            transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 4px;
+        }
+
+        .needle::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: -6px;
+            width: 16px;
+            height: 16px;
+            background: #111111;
+            border-radius: 50%;
+        }
+
+        /* Text Styling */
+        .aqi-value { font-size: 3rem; font-weight: 800; color: #333; margin-top: 10px; }
+        .aqi-status { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .status-good { color: #7e0023; }
+        .city-name { color: #181717; font-size: 0.9rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+   <!-- <p text-align="center" style="font-size: 1.5rem; color: #555; margin-bottom: 20px;"> (AQI) Measurer Widget</p> -->
+   <br>
+    <div class="aqi-card">
+        <div class="gauge-container">
+            <div class="gauge-arc"></div>
+            <div class="needle"></div>
+        </div>
+        
+        <div class="aqi-status status-good">WORSE</div>
+        <div class="aqi-value">1200</div>
+        <div class="city-name">Ghaziabad, Uttar Pradesh</div>
+    </div>
+
+</body>
+</html>
