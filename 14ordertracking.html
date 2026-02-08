@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Order Tracking</title>
+</head>
+<body> 
+ <p style="text-align: center; font-size: 24px; font-weight: bold;">Order Tracking</p>
+ 
+ <div class="tracker">
+  <style>
+    .tracker { font-family: sans-serif; padding: 20px; }
+    .step { display: flex; align-items: center; margin-bottom: 20px; position: relative; }
+    .circle { width: 30px; height: 30px; border-radius: 50%; background: #3498db; color: white; 
+              display: flex; align-items: center; justify-content: center; margin-right: 15px; z-index: 1; }
+    .step:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 30px; width: 2px; height: 20px; background: #ddd; }
+    .active { font-weight: bold; }
+  </style>
+  <div class="step active"><div class="circle">1</div> Order Placed</div>
+  <div class="step"><div class="circle">2</div> Shipping</div>
+  <div class="step" style="opacity: 0.5;"><div class="circle">3</div> Delivered</div>
+</div>
+
+</body>
+</html>
+
