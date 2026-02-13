@@ -1,0 +1,39 @@
+<html>
+<head>
+<title> Student Registration Form </title>
+</head>
+
+  <style>
+    form { width: 300px; margin: auto; padding: 20px; border: 2px solid black; }
+    input { width: 100%; margin: 5px 0; padding: 8px; }
+  </style>
+
+<body>
+
+<h2 align="center">Student Registration Form</h2>
+
+<form action="/submit registration" method="POST">
+        <div>
+            <label for="full name">Full Name:</label>
+<br>
+            
+            <input type="text" id="full name" name="full name" placeholder="Enter your full name" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label><br>
+        
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label><br>
+         
+            <input type="password" id="password" name="password" placeholder="Set a strong password" required min length="8">
+        </div>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
